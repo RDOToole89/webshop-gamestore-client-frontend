@@ -1,0 +1,16 @@
+.NavBar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NavBar-brand {
+  color: red;
+}
+
+.NavBar-list {
+  display: flex;
+}
+
+.NavBar-list-item {
+  margin-right: 1em;
+}
