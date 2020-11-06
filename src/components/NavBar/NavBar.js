@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import CartDisplay from "../CartDisplay/CartDisplay";
 import "./NavBar.css";
 
 function NavBar() {
@@ -19,6 +20,7 @@ function NavBar() {
           <li className="NavBar-list-item">Contact</li>
         </NavLink>
       </ul>
+      <CartDisplay />
     </div>
   );
 }

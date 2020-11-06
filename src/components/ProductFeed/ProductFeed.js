@@ -7,8 +7,8 @@ import "./ProductFeed.css";
 function ProductFeed() {
   const products = useSelector(selectAllProducts);
   const loading = useSelector(selectProductLoading);
-  console.log("ISLOADING?", loading);
-  console.log("WHAT ARE PRODUCTS?", products);
+  // console.log("ISLOADING?", loading);
+  // console.log("WHAT ARE PRODUCTS?", products);
 
   return (
     <div>
@@ -17,6 +17,7 @@ function ProductFeed() {
         {products?.map((product) => (
           <ProductCard
             key={product.id}
+            productId={product.id}
             name={product.name}
             imageUrl={product.imageUrl}
             price={product.price}

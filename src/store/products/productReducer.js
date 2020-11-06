@@ -4,12 +4,17 @@ const initialState = {
 };
 
 const productReducer = (state = initialState, action) => {
-  console.log("WHAT IS IN ACTION.PAYLOAD?", action.payload);
   switch (action.type) {
-    case "REQUEST_PRODUCTS": {
+    case "START_LOADING_PRODUCTS": {
       return {
         ...state,
         loading: true,
+      };
+    }
+    case "REQUEST_PRODUCTS": {
+      return {
+        ...state,
+        loading: false,
         productsArray: action.payload.productArray,
       };
     }

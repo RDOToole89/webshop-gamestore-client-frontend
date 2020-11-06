@@ -10,10 +10,17 @@ export const requestProducts = (productArray) => {
   };
 };
 
+export const startLoadingProducts = () => {
+  return {
+    type: "START_LOADING_PRODUCTS",
+  };
+};
+
 export const fetchProducts = () => async (dispatch, getState) => {
+  dispatch(startLoadingProducts());
+
   try {
     const products = await Axios.get(`${API_URL}/products`);
-    console.log(products);
 
     dispatch(requestProducts(products.data));
   } catch (e) {
