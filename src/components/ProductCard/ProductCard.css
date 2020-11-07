@@ -6,6 +6,12 @@
   border-radius: 0.5rem;
   margin: 1rem;
   padding: 1em;
+  transform: scale(1);
+  transition: 200ms ease-in;
+}
+
+.ProductCard:hover {
+  transform: scale(1.02);
 }
 
 .ProductCard-image {

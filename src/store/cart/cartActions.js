@@ -25,6 +25,14 @@ export const addQuantity = (id) => {
     id,
   };
 };
+
+export const pushToBasket = (productInfoObject) => {
+  return {
+    type: "PUSH_TO_BASKET",
+    payload: productInfoObject,
+  };
+};
+
 export const emptyCart = () => {
   return {
     type: "EMPTY_CART",

@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../../store/cart/cartActions";
-import { cartQuantityWithProductId, selectQuantityInCart } from "../../store/cart/cartSelectors";
+import { cartQuantityWithProductId } from "../../store/cart/cartSelectors";
 import "./AddToCartBox.css";
 
 function AddToCartBox(props) {
@@ -10,11 +10,6 @@ function AddToCartBox(props) {
   const { productId } = props;
 
   const quantity = useSelector(cartQuantityWithProductId(productId));
-
-  // const quantity2 = useSelector(selectQuantityInCart());
-  // console.log(quantity2);
-
-  console.log("WHAT IS QUANITY?", quantity);
 
   const addToCartHandler = () => {
     dispatch(addToCart(productId));
@@ -31,7 +26,7 @@ function AddToCartBox(props) {
         <button onClick={removeFromCartHandler} className="AddToCart-btn">
           -
         </button>
-        <span> {quantity?.quantity} item in cart</span>
+        <span> {!quantity ? 0 : quantity?.quantity} item in cart</span>
         <button onClick={addToCartHandler} className="AddToCart-btn">
           +
         </button>

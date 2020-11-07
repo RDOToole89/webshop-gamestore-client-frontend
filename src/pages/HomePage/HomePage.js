@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import NavBar from "../../components/NavBar/NavBar";
+
 import ProductFeed from "../../components/ProductFeed/ProductFeed";
 import { fetchProducts } from "../../store/products/productActions";
 
@@ -9,11 +9,10 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(fetchProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
-      <NavBar />
       <ProductFeed />
     </div>
   );

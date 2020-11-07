@@ -30,3 +30,13 @@ button {
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoorthing: grayscale;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  font-weight: 800;
+  color: orangered;
+}

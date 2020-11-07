@@ -1,0 +1,23 @@
+.CartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-bottom: 1em;
+  padding: 1.5em;
+}
+
+.CartItem-qty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 50px;
+  text-align: center;
+  border: 1px solid darkgray;
+  border-radius: 20%;
+}
+
+.CartItem-img {
+  width: 10%;
+}

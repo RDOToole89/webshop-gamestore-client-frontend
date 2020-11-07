@@ -1,10 +1,14 @@
 .NavBar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #131921;
+  color: white;
+  padding: 1em;
 }
 
 .NavBar-brand {
-  color: red;
+  color: white;
 }
 
 .NavBar-list {
@@ -13,4 +17,5 @@
 
 .NavBar-list-item {
   margin-right: 1em;
+  color: white;
 }

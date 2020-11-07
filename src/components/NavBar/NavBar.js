@@ -10,13 +10,13 @@ function NavBar() {
         <h3 className="NavBar-brand">WebSHOP Project</h3>
       </div>
       <ul className="NavBar-list">
-        <NavLink to="/">
+        <NavLink exact={true} to="/">
           <li className="NavBar-list-item">Home</li>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/sigin">
           <li className="NavBar-list-item">Sign in</li>
         </NavLink>
-        <NavLink to="/">
+        <NavLink to="/contact">
           <li className="NavBar-list-item">Contact</li>
         </NavLink>
       </ul>
