@@ -1,10 +1,11 @@
 .Cart {
   display: flex;
-  width: 80%;
-  justify-content: flex-start;
+  width: 100%;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding-bottom: 10em;
+  min-height: 70vh;
 }
 
 .Cart-total {

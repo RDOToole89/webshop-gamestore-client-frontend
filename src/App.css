@@ -22,10 +22,10 @@ input,
 select,
 textarea,
 button {
-  padding: 1rem;
+  padding: 0.6rem;
   border-radius: 0.5rem;
   border: 0.1rem #a4a4a4 solid;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   font-family: "Open Sans", Arial, sans-serif;
   --webkit-font-smoothing: antialiased;
   --moz-osx-font-smoorthing: grayscale;

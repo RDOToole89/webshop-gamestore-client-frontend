@@ -7,7 +7,7 @@ function NavBar() {
   return (
     <div className="NavBar">
       <div className="NavBar-logo-box">
-        <h3 className="NavBar-brand">WebSHOP Project</h3>
+        <h3 className="NavBar-brand">Amazon</h3>
       </div>
       <ul className="NavBar-list">
         <NavLink exact={true} to="/">
