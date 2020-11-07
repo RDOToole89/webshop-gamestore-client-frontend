@@ -1,0 +1,28 @@
+.Signin {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 70vh;
+}
+
+.Signin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Signin-form-wrapper {
+  padding: 2em;
+  border: 1px solid black;
+  grid-column: 2 / span 1;
+  height: auto;
+  align-self: center;
+  margin-bottom: 10em;
+}
+
+.Signin-form-header {
+  text-align: center;
+}
+
+.Signin-form-input {
+  margin-bottom: 0.5em;
+}
