@@ -14,3 +14,7 @@ export const selectProductLoading = (reduxState) => {
 export const selectSingleProduct = (reduxState) => {
   return reduxState.products.singleProduct;
 };
+
+export const selectComments = (reduxState) => {
+  return reduxState.products.singleProduct.productComments;
+};

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import CommentSection from "../../components/CommentSection/CommentSection";
 import { addToCart } from "../../store/cart/cartActions";
 import { fetchProductById } from "../../store/products/productActions";
 import { selectSingleProduct } from "../../store/products/productSelectors";
@@ -38,6 +39,7 @@ function ProductDetailsPage() {
           </div>
         </div>
       )}
+      <CommentSection />
     </div>
   );
 }
