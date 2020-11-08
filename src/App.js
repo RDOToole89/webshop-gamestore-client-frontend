@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(bootstrapLoginState());
-  }, [dispatch]);
+  }, []);
 
   return (
     <div className="App">

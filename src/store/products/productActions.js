@@ -16,6 +16,26 @@ export const startLoadingProducts = () => {
   };
 };
 
+export const saveProductById = (productObject) => {
+  return {
+    type: "SAVE_PRODUCT_BY_ID",
+    payload: productObject,
+  };
+};
+
+export const fetchProductById = (productId) => async (dispatch, getState) => {
+  // dispatch(startLoadingProducts());
+
+  try {
+    const product = await Axios.get(`${API_URL}/products/${productId}`);
+    console.log(product);
+
+    dispatch(saveProductById(product.data));
+  } catch (e) {
+    console.log(e);
+  }
+};
+
 export const fetchProducts = () => async (dispatch, getState) => {
   dispatch(startLoadingProducts());
 

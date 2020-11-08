@@ -1,6 +1,7 @@
 const initialState = {
   loading: false,
   productsArray: [],
+  singleProduct: {},
 };
 
 const productReducer = (state = initialState, action) => {
@@ -16,6 +17,13 @@ const productReducer = (state = initialState, action) => {
         ...state,
         loading: false,
         productsArray: action.payload.productArray,
+      };
+    }
+    case "SAVE_PRODUCT_BY_ID": {
+      return {
+        ...state,
+        loading: false,
+        singleProduct: { ...action.payload },
       };
     }
 

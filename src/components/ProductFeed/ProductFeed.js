@@ -7,11 +7,11 @@ import "./ProductFeed.css";
 function ProductFeed() {
   const products = useSelector(selectAllProducts);
   const loading = useSelector(selectProductLoading);
-  const [genre, setGenre] = useState(0);
+  const [category, setCategory] = useState(0);
 
   let changeSort;
 
-  switch (genre) {
+  switch (category) {
     case 0:
       changeSort = products;
       break;
@@ -42,7 +42,7 @@ function ProductFeed() {
       <select
         className="SelectGenre"
         onChange={(e) => {
-          setGenre(parseInt(e.target.value));
+          setCategory(parseInt(e.target.value));
         }}
       >
         <option value="">select a category</option>

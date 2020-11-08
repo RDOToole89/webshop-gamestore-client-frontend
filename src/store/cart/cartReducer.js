@@ -8,7 +8,8 @@ const cartReducer = (state = initialState, action) => {
     case "ADD_TO_CART": {
       const { productId } = action.payload;
       const productExist = state.items.find((item) => item.productId === productId);
-      // console.log("What is product?, and productExist?", productExist);
+      console.log("What is product?, and productExist?", productExist);
+      console.log("What is payload?", action.payload);
 
       if (productExist) {
         return {

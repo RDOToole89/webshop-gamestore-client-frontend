@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="Footer">
       <div className="container">
-        <h2 className="Footer-header">AMAZON</h2>
+        <h2 className="Footer-header">Amazon</h2>
         <div className="Footer-icon-box">
           <h4 className="Footer-icon-text">
             <i className="Footer-icon las la-mobile fa-2x"></i>

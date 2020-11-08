@@ -1,19 +1,22 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { fetchProducts } from "../../store/products/productActions";
-import { selectProduct } from "../../store/products/productSelectors";
+import { addToCart } from "../../store/cart/cartActions";
+import { fetchProductById } from "../../store/products/productActions";
+import { selectSingleProduct } from "../../store/products/productSelectors";
 import "./ProductDetailsPage.css";
 
 function ProductDetailsPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
+  // const product = false;
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    dispatch(fetchProductById(id));
+  }, [id, dispatch]);
 
-  const product = dispatch(selectProduct(id));
+  const product = useSelector(selectSingleProduct);
+  console.log(product);
 
   return (
     <div className="ProductPage">
@@ -29,7 +32,9 @@ function ProductDetailsPage() {
             <p className="ProductBox-description">{product.description}</p>
 
             <h3 className="ProductBox-price">${product.price}</h3>
-            <button className="ProductBox-btn">Add to Cart</button>
+            <button onClick={() => dispatch(addToCart(parseInt(id)))} className="ProductBox-btn">
+              Add to Cart
+            </button>
           </div>
         </div>
       )}
