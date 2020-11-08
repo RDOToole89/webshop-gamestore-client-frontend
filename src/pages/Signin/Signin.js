@@ -48,7 +48,12 @@ function Sigin() {
             onChange={(e) => setSigninData({ ...signinData, password: e.target.value })}
             value={signinData.password}
           />
-          <button className="Signin-form-btn">Login</button>
+          <button
+            onClick={userLoggedIn.loginSuccess ? history.push("/") : null}
+            className="Signin-form-btn"
+          >
+            Login
+          </button>
         </form>
       </div>
     </div>

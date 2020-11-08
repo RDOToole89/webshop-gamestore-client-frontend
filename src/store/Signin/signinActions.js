@@ -8,6 +8,20 @@ export const loginUser = (userObject) => {
   };
 };
 
+export const loginUserFromToken = (userObject) => {
+  return {
+    type: "LOGIN_USER_FROM_TOKEN",
+    payload: userObject,
+  };
+};
+
+export const logoutUser = () => {
+  console.log("INSIDE LOGOUTUSER ACTION CREATOR?");
+  return {
+    type: "LOGOUT_USER",
+  };
+};
+
 export const getUserData = async (token) => {
   try {
     const response = await Axios.post(`${API_URL}/login/me`, {
@@ -33,9 +47,11 @@ export const getLoginToken = (email, password) => async (dispatch, getState) => 
 
     const userData = await getUserData(token);
 
+    console.log(userData);
+
     if (response) {
       localStorage.setItem("JWTKEY", token);
-      localStorage.setItem("USERNAME", userData.name);
+      localStorage.setItem("USERNAME", userData.firstName);
     }
 
     dispatch(loginUser({ ...userData }));
@@ -49,7 +65,9 @@ export const bootstrapLoginState = () => async (dispatch, getState) => {
 
   if (token) {
     const userData = await getUserData(token);
+    localStorage.setItem("USERNAME", userData.name);
     console.log("USERPROFILE LOADED!", token, userData);
+    dispatch(loginUserFromToken(userData));
   } else {
     console.log("no token stored in localstorage");
   }

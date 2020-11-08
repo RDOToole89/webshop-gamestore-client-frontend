@@ -46,12 +46,11 @@ function ProductFeed() {
         }}
       >
         <option value="">select a genre</option>
-        <option value="1">Thrillers</option>
-        <option value="2">Fantasy</option>
-        <option value="3">Novel</option>
-        <option value="4">Romance</option>
-        <option value="5">Horror</option>
-        <option value="6">Literature</option>
+        <option value="1">Games</option>
+        <option value="2">Playstation</option>
+        <option value="3">Xbox</option>
+        <option value="4">Nintendo</option>
+        <option value="5">Gaming Gear</option>
       </select>
 
       {loading ? <h1>Loading...</h1> : null}
@@ -60,9 +59,10 @@ function ProductFeed() {
           <ProductCard
             key={product.id}
             productId={product.id}
-            name={product.name}
-            imageUrl={product.imageUrl}
+            name={product.productName}
+            imgUrl={product.imgUrl}
             price={product.price}
+            description={product.description}
           />
         ))}
       </div>

@@ -4,13 +4,13 @@ import AddToCartBox from "../AddToCartBox/AddToCartBox";
 import "./ProductCard.css";
 
 function ProductCard(props) {
-  const { productId, name, imageUrl, price } = props;
+  const { productId, name, imgUrl, price } = props;
 
   return (
     <div className="ProductCard">
       <h3 className="ProductCard-name">{name}</h3>
       <Link to={`/product/${productId}`}>
-        <img className="ProductCard-image" src={imageUrl} alt="product" />
+        <img className="ProductCard-image" src={imgUrl} alt="product" />
       </Link>
       <p>${price}</p>
       <AddToCartBox productId={productId} />

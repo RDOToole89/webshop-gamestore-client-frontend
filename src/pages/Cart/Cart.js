@@ -16,7 +16,7 @@ function Cart() {
   const cartItemDetails = dispatch(cartItemsWithName());
   const total = useSelector(cartSubtotal);
 
-  console.log(total);
+  // console.log(total);
 
   return (
     <div className="Cart">
@@ -27,10 +27,10 @@ function Cart() {
             <CartItem
               key={item.productId}
               productId={item.productId}
-              name={item.name}
+              name={item.productName}
               qty={item.quantity}
               price={item.price}
-              imageUrl={item.imageUrl}
+              imgUrl={item.imgUrl}
             />
           );
         })}

@@ -8,6 +8,10 @@
   min-height: 70vh;
 }
 
+.Cart-box {
+  width: 70%;
+}
+
 .Cart-total {
   display: flex;
   justify-content: flex-end;

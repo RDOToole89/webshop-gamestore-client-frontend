@@ -34,9 +34,9 @@ export const cartItemsWithName = () => (dispatch, getState) => {
       if (cartItems[i].productId === products[j].id) {
         const productObject = {
           productId: products[j].id,
-          name: products[j].name,
+          name: products[j].productName,
           price: products[j].price,
-          imageUrl: products[j].imageUrl,
+          imgUrl: products[j].imgUrl,
           quantity: cartItems[i].quantity,
         };
         cartItemsWithName.push(productObject);

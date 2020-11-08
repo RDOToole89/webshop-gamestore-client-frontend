@@ -12,6 +12,10 @@
   color: white;
 }
 
+.NavBar-welcomeBox {
+  width: 200px;
+}
+
 .NavBar-list {
   display: flex;
 }

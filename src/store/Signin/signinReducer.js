@@ -12,6 +12,21 @@ const signinReducer = (state = initialState, action) => {
         user: { ...action.payload },
       };
     }
+    case "LOGIN_USER_FROM_TOKEN": {
+      return {
+        ...state,
+        loginSuccess: true,
+        user: { ...action.payload },
+      };
+    }
+    case "LOGOUT_USER": {
+      console.log("INSIDE LOGOUT USER?", action.payload);
+      return {
+        ...state,
+        loginSuccess: false,
+        user: {},
+      };
+    }
 
     default: {
       return state;
