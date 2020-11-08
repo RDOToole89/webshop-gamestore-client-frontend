@@ -13,6 +13,8 @@
 }
 
 .NavBar-welcomeBox {
+  font-size: 1.3rem;
+  color: orange;
   width: 200px;
 }
 

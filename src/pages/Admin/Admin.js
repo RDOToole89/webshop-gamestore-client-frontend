@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../../store/admin/adminActions";
+import { postNewProduct } from "../../store/admin/adminActions";
 import { selectLoggedInUser } from "../../store/Signin/signinSelectors";
 import "./Admin.css";
 
@@ -18,16 +18,36 @@ function Admin() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addProduct(productData));
+
+    dispatch(postNewProduct(productData));
+    setProductData({
+      productName: "",
+      description: "",
+      imgUrl: "",
+      supplierId: 0,
+      categoryId: 0,
+      unit: 0,
+      price: 0,
+    });
   };
 
-  console.log(productData);
+  const timeOfDay = new Date();
+  const hours = timeOfDay.getHours();
+
+  let greet = "";
+
+  if (hours < 12) greet = "morning";
+  else if (hours >= 12 && hours <= 17) greet = "afternoon";
+  else if (hours >= 17 && hours <= 24) greet = "evening";
+
   const userData = useSelector(selectLoggedInUser);
 
   return (
     <div className="Admin">
       <div className="Admin-panel">
-        <h2 className="Admin-panel-header">Good afternoon {userData.user.name}! </h2>
+        <h2 className="Admin-panel-header">
+          Good {greet} {userData.user.name}!{" "}
+        </h2>
         <p className="Admin-panel-quote">
           "Motivational quote of the day: Be productive or else we'll fire your ass, the bezos is
           watching you!"
@@ -39,8 +59,8 @@ function Admin() {
             id="productName"
             type="test"
             className="Admin-panel-form-input"
-            onChange={(e) => setProductData({ ...productData, email: e.target.value })}
-            value={productData.email}
+            onChange={(e) => setProductData({ ...productData, productName: e.target.value })}
+            value={productData.productName}
           />
           <label htmlFor="description">description</label>
           <input

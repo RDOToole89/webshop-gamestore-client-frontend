@@ -13,13 +13,15 @@ function NavBar() {
 
   return (
     <div className="NavBar">
-      <div className="NavBar-logo-box">
-        <h3 className="NavBar-brand">Amazon</h3>
-      </div>
+      <NavLink to="/">
+        <div className="NavBar-logo-box">
+          <h3 className="NavBar-brand">Amazon</h3>
+        </div>
+      </NavLink>
       {!userData.loginSuccess ? (
         <p className="NavBar-welcomeBox"></p>
       ) : (
-        <p>Welcome {userData.user.name}!</p>
+        <p className="NavBar-welcomeBox">Welcome {userData.user.name}!</p>
       )}
       <ul className="NavBar-list">
         <NavLink exact={true} to="/">
@@ -37,7 +39,7 @@ function NavBar() {
           </NavLink>
         )}
         <NavLink to="/contact">
-          <li className="NavBar-list-item">Contact</li>
+          <li className="NavBar-list-item">Account</li>
         </NavLink>
         {userData.user.isAdmin && (
           <NavLink to="/admin">

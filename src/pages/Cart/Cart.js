@@ -27,7 +27,7 @@ function Cart() {
             <CartItem
               key={item.productId}
               productId={item.productId}
-              name={item.productName}
+              name={item.name}
               qty={item.quantity}
               price={item.price}
               imgUrl={item.imgUrl}
@@ -38,7 +38,7 @@ function Cart() {
           <div className="Cart-total-box">
             <p className="Cart-total-shipping">Shipping costs: none</p>
             <p className="Cart-total-articles">
-              Subtotal ({itemsInCart} item): ${total}
+              Subtotal ({itemsInCart} item): ${total.toFixed(2)}
             </p>
             <button className="Cart-total-button">Proceed to checkout</button>
           </div>

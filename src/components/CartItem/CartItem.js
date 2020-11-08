@@ -19,7 +19,7 @@ function CartItem(props) {
       </div>
       <div className="CartItem-qty">{qty}</div>
       <AddToCartBox productId={productId} />
-      <p className="CartItem-total">${parseFloat(price * qty)}</p>
+      <p className="CartItem-total">${parseFloat(price * qty).toFixed(2)}</p>
     </div>
   );
 }

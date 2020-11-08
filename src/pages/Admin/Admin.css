@@ -18,6 +18,7 @@
 .Admin-panel-form {
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 
 .Admin-panel-form-input {

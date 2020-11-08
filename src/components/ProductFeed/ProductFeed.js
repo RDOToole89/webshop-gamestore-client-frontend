@@ -45,7 +45,7 @@ function ProductFeed() {
           setGenre(parseInt(e.target.value));
         }}
       >
-        <option value="">select a genre</option>
+        <option value="">select a category</option>
         <option value="1">Games</option>
         <option value="2">Playstation</option>
         <option value="3">Xbox</option>

@@ -1,8 +1,9 @@
 .AddToCart-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   color: orangered;
+  width: 12em;
 }
 
 .AddToCart-btn {

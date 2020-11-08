@@ -9,16 +9,8 @@ export const addProduct = (productObject) => {
 };
 
 export const postNewProduct = (productObject) => (dispatch, getState) => {
-  const {
-    productName,
-    description,
-    imgUrl,
-    supplierId,
-    catergoryId,
-    unit,
-    price,
-    email,
-  } = productObject;
+  const { productName, description, imgUrl, supplierId, categoryId, unit, price } = productObject;
+  dispatch(addProduct(productObject));
 
   try {
     const response = Axios.post(`${API_URL}/products`, {
@@ -26,10 +18,9 @@ export const postNewProduct = (productObject) => (dispatch, getState) => {
       description,
       imgUrl,
       supplierId,
-      catergoryId,
+      categoryId,
       unit,
       price,
-      email,
     });
     console.log("PRODUCT POST RESPONSE", response);
   } catch (e) {
