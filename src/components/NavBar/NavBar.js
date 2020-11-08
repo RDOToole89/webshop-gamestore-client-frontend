@@ -9,7 +9,7 @@ import "./NavBar.css";
 function NavBar() {
   const dispatch = useDispatch();
   const userData = useSelector(selectLoggedInUser);
-  console.log(userData);
+  // console.log(userData);
 
   return (
     <div className="NavBar">
@@ -36,10 +36,14 @@ function NavBar() {
             <li className="NavBar-list-item">Sign in</li>
           </NavLink>
         )}
-
         <NavLink to="/contact">
           <li className="NavBar-list-item">Contact</li>
         </NavLink>
+        {userData.user.isAdmin && (
+          <NavLink to="/admin">
+            <li className="NavBar-list-item">Admin Panel</li>
+          </NavLink>
+        )}
       </ul>
       <CartDisplay />
     </div>

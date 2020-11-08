@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import Footer from "./components/Footer/Footer";
 import NavBar from "./components/NavBar/NavBar";
+import Admin from "./pages/Admin/Admin";
 import Cart from "./pages/Cart/Cart";
 import Contact from "./pages/Contact/Contact";
 import HomePage from "./pages/HomePage/HomePage";
@@ -24,6 +25,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route exact path="/signin" component={Signin} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/admin" component={Admin} />
         <Route exact path="/cart" component={Cart} />
         <Route exact path="/product/:id?" component={ProductDetailsPage} />
       </Switch>

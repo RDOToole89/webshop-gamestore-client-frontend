@@ -66,7 +66,7 @@ export const bootstrapLoginState = () => async (dispatch, getState) => {
   if (token) {
     const userData = await getUserData(token);
     localStorage.setItem("USERNAME", userData.name);
-    console.log("USERPROFILE LOADED!", token, userData);
+    // console.log("USERPROFILE LOADED!", token, userData);
     dispatch(loginUserFromToken(userData));
   } else {
     console.log("no token stored in localstorage");
